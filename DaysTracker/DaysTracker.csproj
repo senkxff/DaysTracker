@@ -9,11 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Buttons\CloseButton.png" />
+    <None Remove="Materials\CloseButton.png" />
+    <None Remove="Materials\Fire.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Buttons\CloseButton.png" />
+    <Resource Include="Materials\CloseButton.png" />
+    <Resource Include="Materials\Fire.png" />
   </ItemGroup>
 
 </Project>

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DaysTracker"
         mc:Ignorable="d"
-        WindowStyle="None" Height="120" Width="400" WindowState="Normal" WindowStartupLocation="CenterScreen"
-        MaxWidth="400" MaxHeight="120" Background="#1c1c1c">
+        WindowStyle="None" Height="120" Width="500" WindowState="Normal" WindowStartupLocation="CenterScreen"
+        MaxWidth="500" MaxHeight="120" Background="#1c1c1c">
 
     <WindowChrome.WindowChrome>
         <WindowChrome CornerRadius="10"
@@ -15,30 +15,59 @@
                       />
     </WindowChrome.WindowChrome>
 
-
     <Grid>
-        <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
-                
-                <RowDefinition Height="30"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="450"/>
+        </Grid.ColumnDefinitions>
 
-            </Grid.RowDefinitions>
+        <!-- Темная колонка -->
+        <Border Grid.Column="0" Background="#151515"/>
 
-            <TextBlock Text="Количество продуктивных дней:" FontSize="15" FontWeight="Black" 
-                       FontFamily="Harrington" VerticalAlignment="Center" Margin="10 0 0 0" 
-                       Foreground="White"/>
+        <Image Source="/Materials/Fire.png" Grid.Column="1"  Width="25" HorizontalAlignment="Left" Margin="30,0,0,0"
+               VerticalAlignment="Center"/>
 
-        <Image x:Name="Close_btn" Grid.Row="0" Source="/Buttons/CloseButton.png" 
-                   Width="15" Height="15" HorizontalAlignment="Right" VerticalAlignment="Top"
-                   Margin="0 5 5 0" Cursor="Hand" MouseLeftButtonDown="Close_btn_MouseLeftButtonDown"
-                   />
+        <TextBlock Grid.Column="1" Text="Количество продуктивных дней:" FontSize="15" FontWeight="Black" 
+                   FontFamily="Harrington" VerticalAlignment="Top" Margin="73,55,0,0" 
+                   Foreground="White" HorizontalAlignment="Left"/>
 
-        <TextBlock x:Name="Minus_btn" Grid.Row="1" Foreground="WhiteSmoke" FontSize="40" Text="-"
-           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"  Cursor="Hand"
-                   MouseEnter="Minus_btn_MouseEnter" MouseLeave="Minus_btn_MouseLeave"/>
-        
-        <TextBlock x:Name="Add_btn" Grid.Row="1" Foreground="WhiteSmoke" FontSize="40" Text="+"
-                   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"  
-                   Cursor="Hand" MouseEnter="Add_btn_MouseEnter" MouseLeave="Add_btn_MouseLeave"/>
+        <TextBlock Grid.Column="1" Name="CountDays" Text="0" FontSize="30" FontWeight="Black" 
+                   FontFamily="Bahnschrift" VerticalAlignment="Top" Margin="344,48,0,0" 
+                   Foreground="Yellow" HorizontalAlignment="Left">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="10" 
+                                  ShadowDepth="0" 
+                                  Color="Yellow" 
+                                  Opacity="0.7"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+        <Image x:Name="Close_btn" Grid.Column="1" Source="/Materials/CloseButton.png" 
+               Width="15" Height="15" HorizontalAlignment="Right" VerticalAlignment="Top"
+               Margin="0 5 5 0" Cursor="Hand" MouseLeftButtonDown="Close_btn_MouseLeftButtonDown"/>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <TextBlock x:Name="Minus_btn" Foreground="WhiteSmoke" FontSize="40" Text="-"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"  Cursor="Hand"
+                       MouseEnter="Minus_btn_MouseEnter" MouseLeave="Minus_btn_MouseLeave">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="20" 
+                      ShadowDepth="0" 
+                      Color="Red" 
+                      Opacity="0.7"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBlock x:Name="Add_btn" Foreground="WhiteSmoke" FontSize="40" Text="+"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"  
+                       Cursor="Hand" MouseEnter="Add_btn_MouseEnter" MouseLeave="Add_btn_MouseLeave">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="20" 
+                      ShadowDepth="0" 
+                      Color="Green" 
+                      Opacity="0.9"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </StackPanel>
     </Grid>
 </Window>
