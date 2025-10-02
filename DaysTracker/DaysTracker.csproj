@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Buttons\CloseButton.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Buttons\CloseButton.png" />
+  </ItemGroup>
+
 </Project>

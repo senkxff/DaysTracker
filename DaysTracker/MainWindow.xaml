@@ -5,14 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DaysTracker"
         mc:Ignorable="d"
-        WindowStyle="None" Height="100" Width="400">
+        WindowStyle="None" Height="120" Width="400" WindowState="Normal" WindowStartupLocation="CenterScreen"
+        MaxWidth="400" MaxHeight="120" Background="#1c1c1c">
 
     <WindowChrome.WindowChrome>
-        <WindowChrome CornerRadius="10"/>
+        <WindowChrome CornerRadius="10"
+                      CaptionHeight="1"
+                      ResizeBorderThickness="0"
+                      />
     </WindowChrome.WindowChrome>
 
-    
+
     <Grid>
-        <Border Background="#1C1C1C"/>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                
+                <RowDefinition Height="30"/>
+
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Количество продуктивных дней:" FontSize="15" FontWeight="Black" 
+                       FontFamily="Harrington" VerticalAlignment="Center" Margin="10 0 0 0" 
+                       Foreground="White"/>
+
+        <Image x:Name="Close_btn" Grid.Row="0" Source="/Buttons/CloseButton.png" 
+                   Width="15" Height="15" HorizontalAlignment="Right" VerticalAlignment="Top"
+                   Margin="0 5 5 0" Cursor="Hand" MouseLeftButtonDown="Close_btn_MouseLeftButtonDown"
+                   />
+
+        <TextBlock x:Name="Minus_btn" Grid.Row="1" Foreground="WhiteSmoke" FontSize="40" Text="-"
+           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"  Cursor="Hand"
+                   MouseEnter="Minus_btn_MouseEnter" MouseLeave="Minus_btn_MouseLeave"/>
+        
+        <TextBlock x:Name="Add_btn" Grid.Row="1" Foreground="WhiteSmoke" FontSize="40" Text="+"
+                   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"  
+                   Cursor="Hand" MouseEnter="Add_btn_MouseEnter" MouseLeave="Add_btn_MouseLeave"/>
     </Grid>
 </Window>
