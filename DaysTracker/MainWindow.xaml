@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DaysTracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        WindowStyle="None" Height="100" Width="400">
 
+    <WindowChrome.WindowChrome>
+        <WindowChrome CornerRadius="10"/>
+    </WindowChrome.WindowChrome>
+
+    
+    <Grid>
+        <Border Background="#1C1C1C"/>
     </Grid>
 </Window>
