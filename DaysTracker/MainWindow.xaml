@@ -31,7 +31,7 @@
                    FontFamily="Harrington" VerticalAlignment="Top" Margin="73,55,0,0" 
                    Foreground="White" HorizontalAlignment="Left"/>
 
-        <TextBlock Grid.Column="1" Name="CountDays" Text="0" FontSize="30" FontWeight="Black" 
+        <TextBlock Grid.Column="1" Name="CountDays" Text="{Binding}" FontSize="30" FontWeight="Black" 
                    FontFamily="Bahnschrift" VerticalAlignment="Top" Margin="344,48,0,0" 
                    Foreground="Yellow" HorizontalAlignment="Left">
             <TextBlock.Effect>
@@ -49,7 +49,9 @@
         <StackPanel Orientation="Vertical" Grid.Column="0">
             <TextBlock x:Name="Minus_btn" Foreground="WhiteSmoke" FontSize="40" Text="-"
                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"  Cursor="Hand"
-                       MouseEnter="Minus_btn_MouseEnter" MouseLeave="Minus_btn_MouseLeave">
+                       MouseEnter="Minus_btn_MouseEnter" MouseLeave="Minus_btn_MouseLeave"
+                       MouseLeftButtonDown="Minus_btn_MouseLeftButtonDown" MouseRightButtonDown="Minus_btn_MouseRightButtonDown"
+                       ToolTip="ЛКМ - сбросить 1 день">
                 <TextBlock.Effect>
                     <DropShadowEffect BlurRadius="20" 
                       ShadowDepth="0" 
@@ -60,7 +62,8 @@
 
             <TextBlock x:Name="Add_btn" Foreground="WhiteSmoke" FontSize="40" Text="+"
                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"  
-                       Cursor="Hand" MouseEnter="Add_btn_MouseEnter" MouseLeave="Add_btn_MouseLeave">
+                       Cursor="Hand" MouseEnter="Add_btn_MouseEnter" MouseLeave="Add_btn_MouseLeave"
+                       MouseLeftButtonDown="Add_btn_MouseLeftButtonDown">
                 <TextBlock.Effect>
                     <DropShadowEffect BlurRadius="20" 
                       ShadowDepth="0" 

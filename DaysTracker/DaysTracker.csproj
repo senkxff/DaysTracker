@@ -6,16 +6,23 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Materials\CloseButton.png" />
     <None Remove="Materials\Fire.png" />
+    <None Remove="Materials\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Materials\CloseButton.png" />
     <Resource Include="Materials\Fire.png" />
+    <Resource Include="Materials\Icon.ico" />
   </ItemGroup>
 
 </Project>
